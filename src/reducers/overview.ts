@@ -6,22 +6,22 @@ import { getProjectCountsByStatuses, getOverdueProjectsCount, getMostProminentLa
 import { Status } from '../types';
 
 export type OverviewReducer = {
-  projectStatusesCount: Record<Status, number>,
-  overdueProjectsCount: number,
-  mostProminentLangs: string[],
-}
+  projectStatusesCount: Record<Status, number>;
+  overdueProjectsCount: number;
+  mostProminentLangs: string[];
+};
 
-const initialState = {
+const initialState: OverviewReducer = {
   projectStatusesCount: {
-    NOT_STARTED: 0,
-    IN_PROGRESS: 0,
+    NEW: 0,
+    COMPLETED: 0,
     DELIVERED: 0,
   },
   overdueProjectsCount: 0,
   mostProminentLangs: [],
-}
+};
 
-const reducer = (state = initialState, action:Action) => {
+const reducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case constants.FETCH_PROJECTS_SUCCESS: {
       return {
@@ -29,13 +29,13 @@ const reducer = (state = initialState, action:Action) => {
         projectStatusesCount: getProjectCountsByStatuses(action.payload),
         overdueProjectsCount: getOverdueProjectsCount(action.payload),
         mostProminentLangs: getMostProminentLang(action.payload),
-      }
+      };
     }
 
     default: {
       return state;
     }
   }
-}
+};
 
 export default reducer;

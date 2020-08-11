@@ -12,7 +12,7 @@ import { RootReducer } from '../../reducers';
 import config from '../../config';
 
 const ProjectsTable = () => {
-  const list = useSelector((state:RootReducer) => state.list.filteredList);
+  const list = useSelector((state: RootReducer) => state.list.filteredList);
 
   return (
     <TableContainer className="Table-List">
@@ -33,19 +33,21 @@ const ProjectsTable = () => {
           {list.map((project) => (
             <TableRow key={project.id}>
               <TableCell>{project.id}</TableCell>
-              <TableCell><Link to={`/edit/${project.id}`}>{project.name}</Link></TableCell>
+              <TableCell>
+                <Link to={`/edit/${project.id}`}>{project.name}</Link>
+              </TableCell>
               <TableCell>{project.sourceLanguage}</TableCell>
               <TableCell>{project.targetLanguages}</TableCell>
               <TableCell>{project.status}</TableCell>
-              <TableCell>{project.dateCreated.format(config.dataTimeFormat)}</TableCell>
-              <TableCell>{project.dateUpdated.format(config.dataTimeFormat)}</TableCell>
-              <TableCell>{project.dateDue.format(config.dataTimeFormat)}</TableCell>
+              <TableCell>{project.dateCreated.format(config.dateTimeFormat)}</TableCell>
+              <TableCell>{project.dateUpdated.format(config.dateTimeFormat)}</TableCell>
+              <TableCell>{project.dateDue.format(config.dateTimeFormat)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
   );
-}
+};
 
 export default ProjectsTable;

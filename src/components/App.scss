@@ -1,3 +1,7 @@
+.List-Page {
+  margin: 0 0.5rem;
+}
+
 .Overview {
   & > div {
     display: flex;
@@ -61,7 +65,8 @@
     display: flex;
     justify-content: flex-end;
 
-    & > button, & > a {
+    & > button,
+    & > a {
       margin: 0 0 0 0.5rem;
     }
   }
