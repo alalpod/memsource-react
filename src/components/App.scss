@@ -1,0 +1,68 @@
+.Overview {
+  & > div {
+    display: flex;
+    margin: 1rem 0;
+  }
+
+  .MuiPaper-root {
+    flex: 1 1 100%;
+    margin: 0 2rem 0 0;
+    padding: 0.25rem 1rem;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
+
+.Table-List {
+  .MuiTableCell-head {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.Toolbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    width: 300px;
+  }
+}
+
+.Project-Form-Page {
+  width: 800px;
+  margin: 2rem auto;
+
+  form {
+    padding: 1rem;
+  }
+
+  .Form-Row {
+    margin: 0 0 1rem;
+  }
+
+  .MuiFormControl-root {
+    width: 100%;
+  }
+
+  .Buttons-Row {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+
+    & > button, & > a {
+      margin: 0 0 0 0.5rem;
+    }
+  }
+}
